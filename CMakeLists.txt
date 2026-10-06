@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.25)
+project(short_cut_filter_effect_plugin LANGUAGES CXX)
+
+add_library(short-cut-filter-effect-plugin SHARED src/short_cut_filter_effect_plugin.cpp)
+target_compile_features(short-cut-filter-effect-plugin PRIVATE cxx_std_20)
+target_compile_definitions(short-cut-filter-effect-plugin PRIVATE UNICODE _UNICODE WIN32_LEAN_AND_MEAN NOMINMAX)
+target_compile_options(short-cut-filter-effect-plugin PRIVATE /utf-8 /W4 /permissive- /EHsc)
+target_include_directories(short-cut-filter-effect-plugin PRIVATE include)
+target_link_libraries(short-cut-filter-effect-plugin PRIVATE comctl32 dwmapi uxtheme)
+set_target_properties(short-cut-filter-effect-plugin PROPERTIES PREFIX "" SUFFIX ".aux2")

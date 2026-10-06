@@ -1,0 +1,6 @@
+build/
+*.aux2
+*.exp
+*.lib
+*.obj
+*.pdb
